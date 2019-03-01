@@ -82,6 +82,7 @@ const displayCaro = (array,parent)=> {
             <h4 class="card-title"><a href="${item.collection.title}">${item.collection.title}</a></h4>
             <p class="card-text">${item.collection.description}</p>
             <p class="card-text">
+
               <small class="text-muted">Last updated 3 mins ago</small>
             </p>
           </div>
@@ -102,26 +103,22 @@ const display = (array, parent) => {
   array.length === 0 ? "" : array.map((item,i) => {
     parent.innerHTML +=
     `
-    <div class="restrurantCard" id=${i}>
-      <div class="row1">
-          <img src="${item.restaurant.featured_image}" alt="restaurants" style="width:20vw;height:20vh;">
-          <h1><a href="${item.restaurant.url}"><span>${item.restaurant.name}</span></a></h1>
+
+    <div class="card carditem1 " id=${i}>
+          <img src="${item.restaurant.featured_image}" alt="restaurants" style="width:50%;height:40%;" class="card-image-top mx-auto">
+          <div class="card-block">
+          <h1 class="card-title"><a href="${item.restaurant.url}"><span>${item.restaurant.name}</span></a></h1>
           <div class="ratings">
           <div class="rate"><span>${item.restaurant.user_rating.votes}</span></div>
            <span class="vote">${item.restaurant.user_rating.aggregate_rating} votes</span>
           </div>
-      </div>
-      <div class="row2">
 
-          <h3>Address :</h3>
-          <div><span>${item.restaurant.location.address}</span></div>
-           <h3>Cost for Two :</h3>
-          <div><span>${item.restaurant.average_cost_for_two}</span></div>
-
-      </div>
-      <div class="row3">
-        <button class="add-favourite fas fa-plus fa-2x" data-id=${i}></button>
-       </div>
+          <p>Address :${item.restaurant.location.address}</p>
+           <p>Cost for Two :
+          ${item.restaurant.average_cost_for_two}</p>
+        <button id="add${i}" class="add-favourite fas fa-plus fa-2x mx-auto" data-id=${i}></button>
+    </div>
+    </div>
     </div>
     `
   }).join('');
@@ -158,6 +155,7 @@ const searchRestrurants = e => {
   }).then(res => {console.log(res.status);return res.json()}).then(data => {
     restrurants = data.restaurants;
     console.log(restrurants[0]);
+    console.log("hello boys");
     display(restrurants, list);
   })
 
@@ -168,6 +166,8 @@ const addToFavourite = e => {
   e.preventDefault();
   if(e.target.classList.contains('add-favourite')) {
     const itemIndex = e.target.dataset.id;
+    const butn= "add"+itemIndex;
+    document.getElementById(butn).disabled=true;
     console.log(itemIndex);
     favourites.push(restrurants[itemIndex]);
     localStorage.setItem("favourites", JSON.stringify(favourites));

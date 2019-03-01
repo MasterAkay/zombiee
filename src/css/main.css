@@ -7,7 +7,7 @@ height: 100%;
 width: 100%;
 margin: 0;
 padding: 0;
-background: #e74c3c !important;
+background: #9886A0 !important;
 }
 .searchbar{
 margin-bottom: auto;
@@ -55,130 +55,20 @@ color:black;
 }
 /* custom container */
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    width: calc(100% - 600px);
-    margin: 0 auto;
-    box-sizing: border-box;
-
-  }
-
-  .col-12 {
-    flex: 0 0 100%;
-  }
-
-  .col-11 {
-    flex: 0 0 calc(100% / 12 * 11 ); /* 11/12 */
-  }
-
-  .col-10 {
-    flex: 0 0 calc(100% / 12 * 10);
-  }
-
-  .col-9 {
-    flex: 0 0 calc(100% / 12 * 9);
-  }
-
-  .col-8 {
-    flex: 0 0 calc(100% / 12 * 8);
-  }
-
-  .col-7 {
-    flex: 0 0 calc(100% / 12 * 7);
-  }
-
-  .col-6 {
-    flex: 0 0 calc(100% / 12 * 6);
-
-  }
-
-  .col-5 {
-    flex: 0 0 calc(100% / 12 * 5);
-  }
-
-  .col-4 {
-    flex: 0 0 calc(30% / 12 * 4);
-    color: whitesmoke;
-
-  }
-
-  .col-3 {
-    flex: 0 0 calc(100% / 12 * 3);
-
-  }
-
-  .col-2 {
-    flex: 0 0 calc(100% / 12 * 2);
-  }
-
-  .col-1 {
-    flex: 0 0 calc(100% / 12 * 1);
-  }
 
   /* api respone object css */
 
-  .cards-container{
-		width: 80%;
-		margin: 0 auto;
-	}
-	.list{
-		width: 100%;
-		display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-column-gap: 2rem;
-	}
-
-.restrurantCard{
-	width: 100%;
-	display: grid;
-	grid-template-rows: 10rem 8rem 2rem;
-	margin-top: 3rem;
-	border-radius: 10px;
-	border:2px solid #888;
-	/* box-shadow: 10px 10px 28px -2px rgba(0,0,0,0.52); */
-	padding: 1.5rem;
-}
 
 
-.row1{
-display: grid;
-grid-template-columns: 2fr 5fr 1fr;
-grid-gap-column: 1rem;
-}
-.row2{
-display: grid;
-grid-template-columns: 2fr 5fr ;
-grid-template-rows: 1fr 1fr;
-grid-gap-column: 1rem;
-color: #595958;
-}
-.row2 h3{
-	color: #7E8687;
-}
-.row1 img{
-	border-radius: 1.6rem;
-}
-.row1 a{
-	text-decoration: none;
-}
-.row1 h1{
-	padding-top: 2rem;
-	font-size: 2rem;
-	/* text-shadow: 1px 1px #C2CACF; */
-}
 .ratings span{
 	margin-top: 5vh;
 }
 
-.row3{
-	border-top: 0.5vh solid #888;
-	text-align: center;
-}
 .add-favourite{
 	background: transparent;
 	color: #888;
-	margin-top: 5px;
+	/* margin-top: 5px; */
+
 }
 .add-favourite:hover{
 	color: #1100FF;
@@ -208,7 +98,7 @@ color: #595958;
   margin: 0 auto;
   text-align: center;
   border: 1px solid wheat;
-  background-color: rgb(223, 98, 98);
+  background-color: black;
 }
 .fav-head {
   font-weight: 700;
@@ -242,11 +132,53 @@ color: #595958;
   color: red;
   background: wheat;
 }
+.carditem{
+	height:50vh;
+	background-color: #C1ABCC;
+
+}
+.carditem1{
+	width: 33%;
+	height: 78vh;
+	background-color: 	#F1D6FF;
+}
+
 
 
 /* Tablet and up */
 
+@media screen and (max-width:1440px) {
+	.carditem{
+		height:65vh;
+	}
+	.carditem1{
+		width: 33%;
+		height: 130vh;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.carditem{
+		height:80vh;
+	}
+	.carditem1{
+		width: 50%;
+		height: 130vh;
+	}
+}
+@media screen and (max-width:425px) {
+	.carditem{
+		height:80vh;
+	}
+	.carditem1{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
 @media screen and (min-width: 768px) {
+
   .carousel-inner .active,
   .carousel-inner .active+.carousel-item {
     display: block;
@@ -300,9 +232,8 @@ color: #595958;
 }
 
 /* Desktop and up */
-.carditem{
-	height:70vh;
-}
+
+
 
 @media screen and (min-width: 992px) {
   .carousel-inner .active,
