@@ -101,6 +101,7 @@ const display = (array, parent) => {
   parent.innerHTML = '';
 
   array.length === 0 ? "" : array.map((item,i) => {
+      if(item.restaurant.featured_image){
     parent.innerHTML +=
     `
 
@@ -120,7 +121,30 @@ const display = (array, parent) => {
     </div>
     </div>
     </div>
-    `
+          `
+      }else{
+          parent.innerHTML +=
+          `
+
+          <div class="card carditem1 " id=${i}>
+                <img src="./src/images/zomato-fact-sheet_660_051817020539.jpg" alt="restaurants" style="width:50%;height:40%;" class="card-image-top mx-auto">
+                <div class="card-block">
+                <h1 class="card-title"><a href="${item.restaurant.url}"><span>${item.restaurant.name}</span></a></h1>
+                <div class="ratings">
+                <div class="rate"><span>${item.restaurant.user_rating.votes}</span></div>
+                 <span class="vote">${item.restaurant.user_rating.aggregate_rating} votes</span>
+                </div>
+
+                <p>Address :${item.restaurant.location.address}</p>
+                 <p>Cost for Two :
+                ${item.restaurant.average_cost_for_two}</p>
+              <button id="add${i}" class="add-favourite fas fa-plus fa-2x mx-auto" data-id=${i}></button>
+          </div>
+          </div>
+          </div>
+                `
+            }
+
   }).join('');
 }
 
