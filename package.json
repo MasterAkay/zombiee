@@ -1,0 +1,21 @@
+{
+    "name": "zombiee",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "json-server": "./node_modules/.bin/json-server",
+        "live-server": "./node_modules/.bin/live-server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MasterAkay/zombiee.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MasterAkay/zombiee/issues"
+    },
+    "homepage": "https://github.com/MasterAkay/zombiee#readme"
+}
